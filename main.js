@@ -12,14 +12,18 @@ const age = Number(prompt("Inserisci l'età"));
 let ticketPrice;
 
 // Calcolare il prezzo totale moltiplicando il prezzo per il numero di chilometri.
-ticketPrice = numeroChilometri * 0.21;
-console.log("Prezzo totale:", ticketPrice)
+
 
 // Controllare se il passeggero è minorenne o over 65.
-if (age >= 18 && age <= 65) {
+if (age < 18) {
+    ticketPrice = numeroChilometri * 0.21;
     ticketPrice = ticketPrice - ((ticketPrice * 20) / 100);
-    console.log("Hai uno sconto del 20%! Prezzo totale:", ticketPrice);
+    console.log(`Hai uno sconto del 20%! Prezzo totale: €${ticketPrice.toLocaleString("it-IT", { style: "currency", currency: "EUR" })}`);
 } else if (age > 65) {
+    ticketPrice = numeroChilometri * 0.21;
     ticketPrice = ticketPrice - ((ticketPrice * 40) / 100);
-    console.log("Hai uno sconto del 40%! Prezzo totale:", ticketPrice);
+    console.log(`Hai uno sconto del 40%! Prezzo totale: €${ticketPrice.toLocaleString("it-IT", { style: "currency", currency: "EUR" })}`);
+} else {
+    ticketPrice = numeroChilometri * 0.21;
+    console.log(`Prezzo totale: €${ticketPrice.toLocaleString("it-IT", { style: "currency", currency: "EUR" })}`)
 }

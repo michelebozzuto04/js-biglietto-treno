@@ -9,14 +9,11 @@
 // Creare tre varibili per il numero di chilometri, l'età e il prezzo del biglietto.
 const numeroChilometri = Number(prompt("Inserisci il numero di Km:"));
 const age = Number(prompt("Inserisci l'età"));
-let ticketPrice;
+// Calcolare il prezzo base moltiplicando il numero di chilometri per 0.21.
+let ticketPrice = numeroChilometri * 0.21;
 
 // Controllare se il passeggero è minorenne o over 65.
 if (age < 18) {
-
-    // Calcolare il prezzo base moltiplicando il numero di chilometri per 0.21.
-    ticketPrice = numeroChilometri * 0.21;
-
     // Applicare il 20% di sconto al prezzo base.
     ticketPrice = ticketPrice - ((ticketPrice * 20) / 100);
 
@@ -25,15 +22,11 @@ if (age < 18) {
 
 } else if (age >= 65) {
 
-    ticketPrice = numeroChilometri * 0.21;
-
     ticketPrice = ticketPrice - ((ticketPrice * 40) / 100);
 
     console.log(`Hai uno sconto del 40%! Prezzo totale: ${ticketPrice.toLocaleString("it-IT", { style: "currency", currency: "EUR" })}`);
 
 } else {
-
-    ticketPrice = numeroChilometri * 0.21;
 
     console.log(`Prezzo totale: ${ticketPrice.toLocaleString("it-IT", { style: "currency", currency: "EUR" })}`)
 
